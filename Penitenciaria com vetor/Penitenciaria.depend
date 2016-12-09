@@ -1,0 +1,129 @@
+# depslib dependency file v1.0
+1481077343 source:c:\users\arthur\testes em c\penitenciaria\validacoes.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	<stdlib.h>
+	<time.h>
+
+1480986288 c:\users\arthur\testes em c\penitenciaria\entidade.h
+
+1481076785 source:c:\users\arthur\testes em c\penitenciaria\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Entidade.h"
+	"Validacoes.h"
+	"Negocio.h"
+	"CRUD.h"
+	<locale.h>
+	<time.h>
+
+1481075704 c:\users\arthur\testes em c\penitenciaria\validacoes.h
+
+1481076756 source:c:\users\arthur\testes em c\penitenciaria\crud.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	"Validacoes.h"
+	<stdlib.h>
+	<string.h>
+
+1481076833 c:\users\arthur\testes em c\penitenciaria\negocio.h
+
+1481077623 source:c:\users\arthur\testes em c\penitenciaria\negocio.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	"CRUD.h"
+	"Validacoes.h"
+	<stdlib.h>
+	<time.h>
+
+1481073060 c:\users\arthur\testes em c\penitenciaria\crud.h
+
+1481149714 source:c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\crud.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	"Validacoes.h"
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1480986288 c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\entidade.h
+
+1481075704 c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\validacoes.h
+
+1481147423 source:c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Entidade.h"
+	"Validacoes.h"
+	"Negocio.h"
+	"CRUD.h"
+	<locale.h>
+	<time.h>
+
+1481146321 c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\negocio.h
+
+1481147187 c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\crud.h
+
+1481149256 source:c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\negocio.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	"CRUD.h"
+	"Validacoes.h"
+	<stdlib.h>
+	<time.h>
+
+1481077343 source:c:\users\arthur.soares.silva\downloads\penitenciaria com vetor\validacoes.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	<stdlib.h>
+	<time.h>
+
+1481247566 source:c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\crud.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	"Validacoes.h"
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1480982690 c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\entidade.h
+
+1481072106 c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\validacoes.h
+
+1481248331 source:c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Entidade.h"
+	"Validacoes.h"
+	"Negocio.h"
+	"CRUD.h"
+	<locale.h>
+	<time.h>
+
+1481239958 c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\negocio.h
+
+1481237823 c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\crud.h
+
+1481248323 source:c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\negocio.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	"CRUD.h"
+	"Validacoes.h"
+	<stdlib.h>
+	<time.h>
+
+1481237766 source:c:\users\arthur\downloads\penitenciaria com vetor 01 (1)\penitenciaria com vetor 01\validacoes.c
+	<stdio.h>
+	<string.h>
+	"Entidade.h"
+	<stdlib.h>
+	<time.h>
+
