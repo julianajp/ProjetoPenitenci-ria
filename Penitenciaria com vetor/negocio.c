@@ -19,31 +19,64 @@ void cadastroDetento(Detentos denVec[]){
     agora = time(NULL);
     strftime( dataEntrada, sizeof(dataEntrada), "%d/%m/%Y", localtime( &agora ) );
 
-    printf("Digite o nome do Detento \n");
+    system("cls");
+    printf("******* Cadastro Detento ******* \n");
+    printf("Os Campos com * devem ser preenchido obrigatóriamente \n");
+
+    printf("Digite o nome do Detento *\n");
     fflush(stdin);
     gets(den.Nome);
 
     den.ID = retornaProximoId(6, denVec);
 
-    strcpy(den.dataNascimento, dataEntrada);
+    printf("Digite a Data de Nascimento ex: dd/mm/aa \n");
+    fflush(stdin);
+    gets(den.dataNascimento);
+
+    strcpy(den.dataEntrada, dataEntrada);
+
+    printf("Digite a Data de Saida ex: dd/mm/aa *\n");
+    fflush(stdin);
+    gets(den.dataSaida);
+
+    printf("Digite o nome da mãe *\n");
+    fflush(stdin);
+    gets(den.nomeMae);
+
+    printf("Digite sua escolaridade \n");
+    fflush(stdin);
+    gets(den.escolaridade);
+
+    printf("Digite o número da Ala *\n");
+    scanf("%d", &den.numeroAla);
+
+    printf("Digite o número de Telefone \n");
+    scanf("%d", &den.telefone);
+
+    printf("Digite a Pena *\n");
+    scanf("%d", &den.pena);
 
     den.ativo = true;
 
+    printf("Digite a profissão \n");
+    fflush(stdin);
+    gets(den.Profissao);
 
+    printf("Digite o número do quarto *\n");
+    scanf("%d", &den.numeroQuarto);
 
-    if(validaString(den.Nome)){
+    printf("Digite o número do CPF *\n");
+    scanf("%ld", &den.loginCPF);
+
+    if(validaString(den.Nome) && validaIntPositivo(den.loginCPF)){
 
         den.preenchido = true;
 
-        if(!verificaDetentoExiste(den.Nome, denVec)){
+        if(!verificaDetentoExiste(den.Nome, denVec) && (!verificaDetentoExisteCPFcdt(den.loginCPF, denVec))){
                 if(cadastroDetentoCRUD(den, 6)){
                     printf("Cadastro Realizado com Sucesso! \n");
-                    strcpy(denVec[den.ID].Nome, den.Nome);
-                    denVec[den.ID].ID = den.ID;
-                    strcpy(denVec[den.ID].dataNascimento, den.dataNascimento);
-                    denVec[den.ID].preenchido = true;
-                    denVec[den.ID].ativo = true;
-                }else{
+                    copiaDetentoParaVetor(den, denVec);
+                    }else{
                     printf("Cadastro não realizado! \n");
                 }
 
@@ -70,40 +103,95 @@ void alteraDetento(Detentos denVec[]){
     Detentos den, denBusca;
     printf("******Altera Detento******* \n");
 
-    printf("Digite o nome do cntato a ser alterado  \n");
+    listaDetentos(denVec);
+
+    printf("\n\nDigite o nome do cntato a ser alterado  \n");
     fflush(stdin);
     gets(nome);
 
     if(verificaDetentoExiste(nome, denVec)){
 
+            printf("Digite o novo nome do Detento \n");
+            fflush(stdin);
+            gets(den.Nome);
+            if(!verificaDetentoExiste(den.Nome, denVec)){
+                denBusca = retornaDetentoPorNome(nome, denVec);
 
-        printf("Digite o novo nome do Detento \n");
-        fflush(stdin);
-        gets(den.Nome);
-        denBusca = retornaDetentoPorNome(nome, denVec);
+                if(denBusca.ativo == false){
+                    printf("Detento nao existe \n");
+                }else{
 
-        if(denBusca.ativo == false){
-            printf("Detento nao existe \n");
-        }else{
-            strcpy(den.dataNascimento, denBusca.dataNascimento);
-            den.ID = denBusca.ID;
-            den.ativo = true;
-            den.preenchido = true;
+                    den.ID = denBusca.ID;
+                    printf("Digite a Data de Nascimento ex: dd/mm/aa \n");
+                    fflush(stdin);
+                    gets(den.dataNascimento);
 
-            if(alteraDetentoCRUD(den, denBusca.ID)){
-                printf("Detento %s Alteado! \n", den.Nome);
+                    printf("Digite a Data de entrada \n");
+                    fflush(stdin);
+                    gets(den.dataEntrada);
+
+
+                    printf("Digite a Data de Saida ex: dd/mm/aa *\n");
+                    fflush(stdin);
+                    gets(den.dataSaida);
+
+                    printf("Digite o nome da mãe *\n");
+                    fflush(stdin);
+                    gets(den.nomeMae);
+
+                    printf("Digite sua escolaridade \n");
+                    fflush(stdin);
+                    gets(den.escolaridade);
+
+                    printf("Digite o número da Ala *\n");
+                    scanf("%d", &den.numeroAla);
+
+                    printf("Digite o número de Telefone \n");
+                    scanf("%d", &den.telefone);
+
+                    printf("Digite a Pena *\n");
+                    scanf("%d", &den.pena);
+
+                    den.ativo = true;
+
+                    printf("Digite a profissão \n");
+                    fflush(stdin);
+                    gets(den.Profissao);
+
+                    printf("Digite o número do quarto *\n");
+                    scanf("%d", &den.numeroQuarto);
+
+                    printf("Digite o número do CPF *\n");
+                    scanf("%ld", &den.loginCPF);
+
+                    den.ativo = true;
+                    den.preenchido = true;
+
+                    if(validaIntPositivo(den.loginCPF) && validaString(den.Nome)){
+                            if(!verificaDetentoExisteCPF(den.loginCPF, denVec, den.ID)){
+                               if(alteraDetentoCRUD(den, denBusca.ID)){
+                                printf("Detento %s Alteado! \n", den.Nome);
+                                copiaDetentoParaVetor(den, denVec);
+
+                                }else{
+                                    printf("Erro na alteracao! \n");
+                                }
+                            }else{
+                                printf("Erro! CPF pertence a outro Detento \n");
+                            }
+
+                    }else{
+                        printf("Dados não foram preenchidos corretamente! \n");
+                    }
+                }
 
             }else{
-                printf("Erro na alteracao! \n");
+                printf("Erro! O Detento %s já cadastrado no Sistema, tentar novamente com outro Nome\n", den.Nome);
             }
-
-        }
-
-
-
     }else{
         printf("Detento nao existe \n");
     }
+
 
 }
 

@@ -17,10 +17,10 @@ const char VISITAS[15] = "visitas.bin";
 const char DETENTOS[15] = "detentos.bin";
 const char ENTRADASAIDA[15] = "entradaSaida.bin";
 
-FILE *pf;
 
 
-void abrirArquivo(int arquivo, char tipo[]){
+
+void abrirArquivo(int arquivo, char tipo[], FILE **pf){
 
      char string[20] = "";
 
@@ -48,7 +48,7 @@ void abrirArquivo(int arquivo, char tipo[]){
             break;
 
      }
-    if(!(pf = fopen(string, tipo))){
+    if(!(*pf = fopen(string, tipo))){
             printf("Erro!");
             exit(1);
     }else {
@@ -62,8 +62,9 @@ void abrirArquivo(int arquivo, char tipo[]){
 
 int cadastroDetentoCRUD(Detentos den, int enty){
 
+    FILE *pf;
     int a = 0;
-    abrirArquivo(enty, "a+b");
+    abrirArquivo(enty, "a+b", &pf);
 
     fseek(pf, 0, SEEK_END);
 
@@ -80,8 +81,9 @@ int cadastroDetentoCRUD(Detentos den, int enty){
 
 void carregaDetentosVetor(int enty, Detentos den[]){
 
+    FILE *pf;
     int indix = 0;
-    abrirArquivo(enty, "a+b");
+    abrirArquivo(enty, "a+b", &pf);
     fseek(pf, 0, SEEK_SET);
     memset(den, 0, sizeof(Detentos));
 
@@ -105,7 +107,6 @@ void listaDetentoCRUD(Detentos den[]){
 
     printf("***Lista de Detentos*** \n");
 
-    /*carregaDetentosVetor(6, den);*/
 
     for(result = 0; result <= 200; result++){
         if(den[result].ativo == true && den[result].preenchido == true){
@@ -161,8 +162,9 @@ Detentos retornaDetentoPorNome(char nome[], Detentos denVec[]){
 
 int  alteraDetentoCRUD(Detentos den, int id){
 
+    FILE *pf;
     int retorno = 0;
-    abrirArquivo(6, "r+b");
+    abrirArquivo(6, "r+b", &pf);
 
 
     rewind(pf);

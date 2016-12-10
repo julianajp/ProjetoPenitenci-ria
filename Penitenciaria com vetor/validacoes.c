@@ -54,5 +54,58 @@ int verificaDetentoExiste(char stringN[], Detentos denVec[]){
         return result;
 }
 
+int verificaDetentoExisteCPF(long int CPF, Detentos denVec[], int atual){
+
+    int index, result = 0;
+
+        for(index = 0; index <= MAX_Detentos; index++){
+           if(CPF == denVec[index].loginCPF){
+                if(index == atual){
+                    result = 0;
+                }else{
+                    result = 1;
+                }
+
+                break;
+            }
+        }
+
+        return result;
+}
+
+int verificaDetentoExisteCPFcdt(long int CPF, Detentos denVec[]){
+
+    int index, result = 0;
+
+        for(index = 0; index <= MAX_Detentos; index++){
+           if(CPF == denVec[index].loginCPF){
+                result = 1;
+                break;
+            }
+        }
+
+        return result;
+}
 
 
+void copiaDetentoParaVetor(Detentos den, Detentos denVec[]){
+
+    int ID = den.ID;
+
+    strcpy(denVec[ID].Nome, den.Nome);
+    denVec[ID].ID = den.ID;
+    strcpy(denVec[ID].dataNascimento, den.dataNascimento);
+    strcpy(denVec[ID].dataSaida, den.dataSaida);
+    strcpy(denVec[ID].dataEntrada, den.dataEntrada);
+    strcpy(denVec[ID].nomeMae, den.nomeMae);
+    strcpy(denVec[ID].escolaridade, den.escolaridade);
+    denVec[ID].numeroAla = den.numeroAla;
+    denVec[ID].telefone = den.telefone;
+    denVec[ID].pena = den.pena;
+    denVec[ID].ativo = den.ativo;
+    denVec[ID].preenchido = den.preenchido;
+    strcpy(denVec[ID].Profissao, den.Profissao);
+    denVec[ID].numeroQuarto = den.numeroQuarto;
+    denVec[ID].loginCPF = den.loginCPF;
+
+}

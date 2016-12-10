@@ -78,11 +78,12 @@ char escolaridade[50];
 int numeroAla;
 int telefone;
 float avaliacao;
-char pena[20];
+int pena;
 int preenchido;
 int ativo;
 char Profissao[30];
 int numeroQuarto;
+long int loginCPF;
 
 
 } Detentos;
@@ -98,4 +99,14 @@ int IDvisitante;
 
 
 } EntradaSaida;
+
+typedef struct penas{
+
+int ID;
+char descricao[20];
+char Regiume[20];
+int grau;
+
+
+} Penas;
 #endif // ENTIDADE_H_INCLUDED

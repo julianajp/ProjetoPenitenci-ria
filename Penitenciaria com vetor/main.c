@@ -14,7 +14,9 @@ int main()
 
     int a = 0;
 
-    Detentos den[200];
+    Detentos *den;
+
+    den = malloc(sizeof(Detentos)*250);
 
     carregaDetentosVetor(6, den);
 
