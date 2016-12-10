@@ -233,3 +233,97 @@ void excluiDetento(Detentos denVect[]){
         printf("Erro! Nome não digitado! \n");
     }
 }
+
+
+void cadastroPena(Penas penvec[]){
+
+    Penas pen;
+    system("cls");
+    printf("**** Cadastro de Penas***** \n");
+
+    printf("Digite a descrição da Pena \n");
+    fflush(stdin);
+    gets(pen.descricao);
+
+    printf("Digite o Regime da Pena \n");
+    fflush(stdin);
+    gets(pen.Regiume);
+
+    printf("Digite o grau da Pena \n");
+    fflush(stdin);
+    scanf("%d", &pen.grau);
+
+    pen.ID = retornaProximoIdPenas(penvec);
+
+    if(validaString(pen.descricao) && validaString(pen.Regiume) && validaIntPositivo(pen.grau)){
+            pen.preenchido = true;
+            if(!verificaDecsPenaExiste(pen.descricao, penvec)){
+                if(cadastraPenasCRUD(pen, 8)){
+                        printf("Pena Cadastrada! \n");
+                        copiaPenaParaVetor(pen, penvec);
+                }else{
+                    printf("Erro! Pena Não cadastrada \n");
+                }
+            }else{
+                printf("Erro! Não é possível cadastrar essa pena, pois ela já foi cadastrada \n");
+            }
+
+    }else{
+        printf("Favor, preencher todos os dados corretamente \n");
+    }
+}
+
+void listaPenas(Penas penVec[]){
+    listaPenasCRUD(penVec);
+}
+
+
+void alteraPena(Penas penVec[]){
+
+    system("cls");
+
+    char descricao[50];
+    int ID;
+    Penas pen, penBusca;
+
+    printf("****** Alteração de Pena *******");
+
+    listaPenas(penVec);
+
+    printf("Digite o ID do Contato a ser Alterado \n");
+    scanf("%d", &ID);
+
+    if(verificaPenaExiste(ID, penVec)){
+
+            printf("Digite o Novo nome para descrição \n");
+            fflush(stdin);
+            gets(pen.descricao);
+
+            if(!verificaDecsPenaExiste(pen.descricao, penVec)){
+                  penBusca = retornaPenaDetento(ID, penVec);
+
+                  printf("Digite o Grau \n");
+                  scanf("%d", &pen.grau);
+                  pen.ID = penBusca.ID;
+                  printf("%d %d", penBusca.ID, penBusca.preenchido);
+
+                  if(validaString(pen.descricao), validaIntPositivo(pen.grau)){
+                        pen.preenchido = penBusca.preenchido;
+                        if(alteraPenasCRUD(pen, penBusca.ID)){
+                            printf("A Pena %s Foi Alterada com Sucesso!",  pen.descricao);
+                            copiaPenaParaVetor(pen, penVec);
+                        }else{
+                            printf("Erro! Pena não Alterada!");
+                        }
+                  }else{
+                      printf("Erro! Digite os campos corretamente! \n");
+                  }
+
+            }else{
+                printf("Erro! Nome já cadastrado, tente como outro! \n");
+            }
+
+    }else{
+        printf("Erro! Esta Pena Não existe \n");
+    }
+}

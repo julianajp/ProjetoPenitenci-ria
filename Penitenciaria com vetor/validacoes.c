@@ -6,6 +6,7 @@
 #define false 0
 #include <time.h>
 #define MAX_Detentos 200
+#define Max_Penas 100
 
 
 
@@ -107,5 +108,45 @@ void copiaDetentoParaVetor(Detentos den, Detentos denVec[]){
     strcpy(denVec[ID].Profissao, den.Profissao);
     denVec[ID].numeroQuarto = den.numeroQuarto;
     denVec[ID].loginCPF = den.loginCPF;
+
+}
+
+int verificaPenaExiste(int IDpena, Penas penVec[]){
+
+    int index, result = 0;
+
+        for(index = 0; index <= Max_Penas; index++){
+           if(penVec[index].ID ==  IDpena){
+                result = 1;
+                break;
+            }
+        }
+
+        return result;
+}
+
+int verificaDecsPenaExiste(char stringP[], Penas penVec[]){
+
+    int index, result = 0;
+
+        for(index = 0; index <= Max_Penas; index++){
+           if(strcmp(penVec[index].descricao, stringP) == 0){
+                result = 1;
+                break;
+            }
+        }
+
+        return result;
+}
+
+void copiaPenaParaVetor(Penas pen, Penas penVec[]){
+
+    int ID = pen.ID;
+
+    strcpy(penVec[ID].descricao, pen.descricao);
+    penVec[ID].ID = pen.ID;
+    strcpy(penVec[ID].Regiume, pen.Regiume);
+    penVec[ID].grau = pen.grau;
+    penVec[ID].preenchido = pen.preenchido;
 
 }

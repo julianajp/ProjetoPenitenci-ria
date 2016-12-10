@@ -106,6 +106,7 @@ int ID;
 char descricao[20];
 char Regiume[20];
 int grau;
+int preenchido;
 
 
 } Penas;

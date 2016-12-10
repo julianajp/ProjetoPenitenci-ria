@@ -8,4 +8,11 @@ void listaDetentoCRUD(Detentos den[]);
 int retornaProximoId(int enty, Detentos den[]);
 Detentos retornaDetentoPorNome(char nome[], Detentos denVec[]);
 int alteraDetentoCRUD(Detentos den, int id);
+
+void carregaPenasVetor(int enty, Penas pen[]);
+int retornaProximoIdPenas(Penas pen[]);
+Penas retornaPenaDetento(int ID, Penas penVec[]);
+int cadastraPenasCRUD(Penas pen, int enty);
+void listaPenasCRUD(Penas pen[]);
+int  alteraPenasCRUD(Penas pen, int id);
 #endif // CRUD_H_INCLUDED
