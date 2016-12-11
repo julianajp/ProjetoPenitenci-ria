@@ -26,7 +26,7 @@ int main()
 
     while (a != 2){
 
-        printf("\n***** Penitenciária ***** \n \n");
+        printf("\n***** PenitenciÃ¡ria ***** \n \n");
         printf("1 - Menu Inicial \n2 - Sair  \n");
         fflush(stdin);
         scanf("%d", &a);
@@ -39,7 +39,7 @@ int main()
             printf("Sistema off \n");
             break;
         default:
-            printf("Digite um número correto \n");
+            printf("Digite um nÃºmero correto \n");
 
         }
     }
@@ -48,4 +48,31 @@ int main()
 
     return 0;
 }
+ Funcionario func[200];
 
+    carregaFuncVetor(1, func);
+
+    Visitas vis[200];
+
+    while (a = 3){
+
+        printf("\n*****Menu***** \n \n");
+        printf("1 - Cadastrar \n2 - Listar  \n3 - Alterar \n4 - Excluir \n");
+        scanf("%d", &a);
+        switch(a){
+
+        case 1:
+            cadastroFunc(func);
+            break;
+        case 2:
+            listaFunc(func);
+            break;
+        case 3:
+            alteraFunc(func);
+            carregaFuncVetor(1, func);
+            break;
+        case 4:
+            excluiFunc(func);
+            break;
+
+        }
