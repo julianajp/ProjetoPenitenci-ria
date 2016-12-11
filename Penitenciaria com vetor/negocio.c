@@ -21,7 +21,7 @@ void cadastroDetento(Detentos denVec[]){
 
     system("cls");
     printf("******* Cadastro Detento ******* \n");
-    printf("Os Campos com * devem ser preenchido obrigatÛriamente \n");
+    printf("Os Campos com * devem ser preenchido obrigat√≥riamente \n");
 
     printf("Digite o nome do Detento *\n");
     fflush(stdin);
@@ -39,7 +39,7 @@ void cadastroDetento(Detentos denVec[]){
     fflush(stdin);
     gets(den.dataSaida);
 
-    printf("Digite o nome da m„e *\n");
+    printf("Digite o nome da m√£e *\n");
     fflush(stdin);
     gets(den.nomeMae);
 
@@ -47,10 +47,10 @@ void cadastroDetento(Detentos denVec[]){
     fflush(stdin);
     gets(den.escolaridade);
 
-    printf("Digite o n˙mero da Ala *\n");
+    printf("Digite o n√∫mero da Ala *\n");
     scanf("%d", &den.numeroAla);
 
-    printf("Digite o n˙mero de Telefone \n");
+    printf("Digite o n√∫mero de Telefone \n");
     scanf("%d", &den.telefone);
 
     printf("Digite a Pena *\n");
@@ -58,14 +58,14 @@ void cadastroDetento(Detentos denVec[]){
 
     den.ativo = true;
 
-    printf("Digite a profiss„o \n");
+    printf("Digite a profiss√£o \n");
     fflush(stdin);
     gets(den.Profissao);
 
-    printf("Digite o n˙mero do quarto *\n");
+    printf("Digite o n√∫mero do quarto *\n");
     scanf("%d", &den.numeroQuarto);
 
-    printf("Digite o n˙mero do CPF *\n");
+    printf("Digite o n√∫mero do CPF *\n");
     scanf("%ld", &den.loginCPF);
 
     if(validaString(den.Nome) && validaIntPositivo(den.loginCPF)){
@@ -77,12 +77,12 @@ void cadastroDetento(Detentos denVec[]){
                     printf("Cadastro Realizado com Sucesso! \n");
                     copiaDetentoParaVetor(den, denVec);
                     }else{
-                    printf("Cadastro n„o realizado! \n");
+                    printf("Cadastro n√£o realizado! \n");
                 }
 
          }else {
 
-             printf("Detento %s j· cadastrado \n", den.Nome);
+             printf("Detento %s j√° cadastrado \n", den.Nome);
 
          }
 
@@ -135,7 +135,7 @@ void alteraDetento(Detentos denVec[]){
                     fflush(stdin);
                     gets(den.dataSaida);
 
-                    printf("Digite o nome da m„e *\n");
+                    printf("Digite o nome da m√£e *\n");
                     fflush(stdin);
                     gets(den.nomeMae);
 
@@ -143,10 +143,10 @@ void alteraDetento(Detentos denVec[]){
                     fflush(stdin);
                     gets(den.escolaridade);
 
-                    printf("Digite o n˙mero da Ala *\n");
+                    printf("Digite o n√∫mero da Ala *\n");
                     scanf("%d", &den.numeroAla);
 
-                    printf("Digite o n˙mero de Telefone \n");
+                    printf("Digite o n√∫mero de Telefone \n");
                     scanf("%d", &den.telefone);
 
                     printf("Digite a Pena *\n");
@@ -154,14 +154,14 @@ void alteraDetento(Detentos denVec[]){
 
                     den.ativo = true;
 
-                    printf("Digite a profiss„o \n");
+                    printf("Digite a profiss√£o \n");
                     fflush(stdin);
                     gets(den.Profissao);
 
-                    printf("Digite o n˙mero do quarto *\n");
+                    printf("Digite o n√∫mero do quarto *\n");
                     scanf("%d", &den.numeroQuarto);
 
-                    printf("Digite o n˙mero do CPF *\n");
+                    printf("Digite o n√∫mero do CPF *\n");
                     scanf("%ld", &den.loginCPF);
 
                     den.ativo = true;
@@ -181,12 +181,12 @@ void alteraDetento(Detentos denVec[]){
                             }
 
                     }else{
-                        printf("Dados n„o foram preenchidos corretamente! \n");
+                        printf("Dados n√£o foram preenchidos corretamente! \n");
                     }
                 }
 
             }else{
-                printf("Erro! O Detento %s j· cadastrado no Sistema, tentar novamente com outro Nome\n", den.Nome);
+                printf("Erro! O Detento %s j√° cadastrado no Sistema, tentar novamente com outro Nome\n", den.Nome);
             }
     }else{
         printf("Detento nao existe \n");
@@ -222,15 +222,15 @@ void excluiDetento(Detentos denVect[]){
                     denVect[den.ID].ativo = false;
                     printf("O Detento %s Foi excluido do Sistema! \n", nome);
                 }else{
-                    printf("Erro! N„o foi possivel excluir detento! \n");
+                    printf("Erro! N√£o foi possivel excluir detento! \n");
                 }
 
         }else{
-            printf("Este detento n„o existe no nosso registro! \n");
+            printf("Este detento n√£o existe no nosso registro! \n");
 
         }
     }else{
-        printf("Erro! Nome n„o digitado! \n");
+        printf("Erro! Nome n√£o digitado! \n");
     }
 }
 
@@ -241,7 +241,7 @@ void cadastroPena(Penas penvec[]){
     system("cls");
     printf("**** Cadastro de Penas***** \n");
 
-    printf("Digite a descriÁ„o da Pena \n");
+    printf("Digite a descri√ß√£o da Pena \n");
     fflush(stdin);
     gets(pen.descricao);
 
@@ -262,10 +262,10 @@ void cadastroPena(Penas penvec[]){
                         printf("Pena Cadastrada! \n");
                         copiaPenaParaVetor(pen, penvec);
                 }else{
-                    printf("Erro! Pena N„o cadastrada \n");
+                    printf("Erro! Pena N√£o cadastrada \n");
                 }
             }else{
-                printf("Erro! N„o È possÌvel cadastrar essa pena, pois ela j· foi cadastrada \n");
+                printf("Erro! N√£o √© poss√≠vel cadastrar essa pena, pois ela j√° foi cadastrada \n");
             }
 
     }else{
@@ -286,7 +286,7 @@ void alteraPena(Penas penVec[]){
     int ID;
     Penas pen, penBusca;
 
-    printf("****** AlteraÁ„o de Pena *******");
+    printf("****** Altera√ß√£o de Pena *******");
 
     listaPenas(penVec);
 
@@ -295,7 +295,7 @@ void alteraPena(Penas penVec[]){
 
     if(verificaPenaExiste(ID, penVec)){
 
-            printf("Digite o Novo nome para descriÁ„o \n");
+            printf("Digite o Novo nome para descri√ß√£o \n");
             fflush(stdin);
             gets(pen.descricao);
 
@@ -313,17 +313,190 @@ void alteraPena(Penas penVec[]){
                             printf("A Pena %s Foi Alterada com Sucesso!",  pen.descricao);
                             copiaPenaParaVetor(pen, penVec);
                         }else{
-                            printf("Erro! Pena n„o Alterada!");
+                            printf("Erro! Pena n√£o Alterada!");
                         }
                   }else{
                       printf("Erro! Digite os campos corretamente! \n");
                   }
 
             }else{
-                printf("Erro! Nome j· cadastrado, tente como outro! \n");
+                printf("Erro! Nome j√° cadastrado, tente como outro! \n");
             }
 
     }else{
-        printf("Erro! Esta Pena N„o existe \n");
+        printf("Erro! Esta Pena N√£o existe \n");
     }
+}
+
+void cadastroFunc(Funcionario funcVec[]){
+    Funcionario func;
+
+
+
+    printf("Digite o nome do funcionario \n");
+    fflush(stdin);
+    gets(func.nome);
+
+    printf("Digite o cargo do funcionario 1. Adm 2. \n");
+    fflush(stdin);
+    gets(func.cargo);
+
+    printf("Digite o CPF do funcionario");
+    fflush(stdin);
+    gets(func.loginCPF);
+
+    printf("Digite a data de nascimento do funcionario");
+    fflush(stdin);
+    gets(func.datadenascimento);
+
+    printf("Digite a idade do funcionario");
+    fflush(stdin);
+    gets(func.idade);
+
+    printf("M√£e");
+    fflush(stdin);
+    gets(func.nomedamae);
+
+    printf("Digite o Rg do funcionario");
+    fflush(stdin);
+    gets(func.Rg);
+
+    switch(cargo){
+        case 1:
+            printf("Digite a senha do funcionario");
+            fflush(stdin);
+            gets(func.senha);
+            break;
+
+        default:
+            break;
+
+    }
+
+
+
+    func.ID = retornaProximoId(1, funcVec);
+
+
+
+    func.ativo = true;
+
+
+
+    if(validaString(func.nome)){
+
+        func.preenchido = true;
+
+        if(!verificaFuncExiste(func.nome, funcVec)){
+                if(cadastroFuncCRUD(func, 1)){
+                    printf("Cadastro Realizado com Sucesso! \n");
+                    strcpy(funcVec[func.ID].nome, func.nome);
+                    funcVec[func.ID].ID = func.ID;
+                    strcpy(funcVec[func.ID].loginCPF, func.loginCPF);
+                    strcpy(funcVec[func.ID].Rg, func.Rg);
+                    strcpy(funcVec[func.ID].datadenascimento, func.datadenascimento);
+                    strcpy(funcVec[func.ID].Senha, func.Senha);
+                    strcpy(funcVec[func.ID].nomedamae, func.nomedamae);
+                    funcVec[func.ID].preenchido = true;
+                    funcVec[func.ID].ativo = true;
+                }else{
+                    printf("Cadastro n√£o realizado! \n");
+                }
+
+         }else {
+
+             printf("Funcionario %s j√° cadastrado \n", func.nome);
+
+         }
+
+    }else{
+        printf("Favor digitar Nome \n");
+    }
+}
+void Login(){
+
+    Funcionario func1;
+    int i = 0;
+    long int senhaconf;
+    int matconf;
+
+do{
+
+
+
+        printf("Login");
+        scanf("%d", &matconf);
+        printf("Senha");
+        scanf("%ld", &senha);
+
+        if(fread(&func1.cargo, sizeof(int), 1, pf) == 1){
+
+            if(&func1.cargo == 1){
+
+                fread(&func1.loginCPF,sizeof(int), 1, pf);
+                fread(&func1.&func.Senha,sizeof(long),1, pf);
+
+                if(&func1.loginCPF == matconf && &func.Senha == senhaconf){
+
+                        printf("Bem Vindo");
+                        i == 1;
+                    }else{
+                        printf("Digite seus dados novamente");
+                    }
+
+                else{
+                    printf("Funcion√°rio n√£o autorizado");
+
+                }
+                }
+
+            }
+        }while(i == 1)
+    }
+
+
+
+
+
+void agendaVisita(){
+
+Visitantes vis1;
+Visitas vis;
+char nome[80],nome1[100];
+int opc = 1;
+
+
+
+do{
+printf("Digite nome");
+gets(nome);
+
+if(fread(&vis1, sizeof(struct Visitantes), 1, pf)== 1){
+
+    if(strcmp(vis1.Nome, nome) == 0){
+        print("Insira nome do detento");
+        gets(nome1);
+
+        if(verificaDetentoExiste(nome1, denVec) == 1){
+
+        print("Insira data");
+        scanf("%d", dataVisita);
+        abrirArquivo(5, vis);
+
+        fwrite(&vis.nomeVis, &vis.nomeDen, &vis.dataVisita, sizeof(Visitas), 1, pf);
+
+
+        printf("Visita agendada com sucesso! %c %d ", nomeVis, dataVisita );
+
+
+        break;}
+
+}   else{
+    printf("Usu√°rio Inv√°lido");
+}
+printf("1.Cadastrar novamente 2.Sair ");
+scanf("%d", opc);
+}
+}while(opc = 1)
+system('pause');
 }
