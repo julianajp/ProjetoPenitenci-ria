@@ -150,3 +150,17 @@ void copiaPenaParaVetor(Penas pen, Penas penVec[]){
     penVec[ID].preenchido = pen.preenchido;
 
 }
+int verificaFuncExiste(char stringN[], Funcionario funcVec[]){
+
+    int index, result = 0;
+
+        for(index = 0; index <= MAX_Func; index++){
+           if(strcmp(funcVec[index].nome, stringN) == 0){
+                result = 1;
+                break;
+            }
+        }
+
+        return result;
+}
+
