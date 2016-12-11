@@ -272,7 +272,7 @@ void listaPenasCRUD(Penas pen[]){
 
     for(result = 0; result <= 200; result++){
         if(pen[result].preenchido == true){
-            printf("ID da Pena: %d \nDescrição: %s \nRegime: %s \nGrau: %d \n", pen[result].ID, pen[result].descricao, pen[result].Regiume, pen[result].grau);
+            printf("ID da Pena: %d \nDescriÃ§Ã£o: %s \nRegime: %s \nGrau: %d \n", pen[result].ID, pen[result].descricao, pen[result].Regiume, pen[result].grau);
             cont++;
         }
     }
@@ -306,3 +306,40 @@ int  alteraPenasCRUD(Penas pen, int id){
     return retorno;
 
 }
+int cadastroFuncCRUD(Funcionario func, int enty){
+
+    int a = 0;
+    abrirArquivo(enty, "a+b");
+
+    fseek(pf, 0, SEEK_END);
+
+    if(fwrite(&func, sizeof(Funcionario), 1, pf) != 1){
+        a = 0;
+    }else {
+        a = 1;
+    }
+    fclose(pf);
+
+    return a;
+
+}
+
+void carregaFuncVetor(int enty, Funcionario func[]){
+
+    int indix = 0;
+    abrirArquivo(enty, "a+b");
+    fseek(pf, 0, SEEK_SET);
+    memset(func, 0, sizeof(Funcionario));
+
+    do{
+            if(fread(&func[indix], sizeof(Funcionario), 1, pf) == 1){
+                indix++;
+            }
+
+
+    }while(!feof(pf));
+
+    fclose(pf);
+
+}
+
